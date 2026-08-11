@@ -1,45 +1,112 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import { Tabs } from 'expo-router';
+import { Feather } from '@expo/vector-icons';
+import { COLORS } from '../../constants/theme';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+// Custom FAB Button Component for Middle Plus (+) Tab
+const CustomFabButton = ({ onPress }: any) => (
+  <TouchableOpacity
+    style={styles.fabWrapper}
+    onPress={onPress}
+    activeOpacity={0.85}
+  >
+    <View style={styles.fabInner}>
+      <Feather name="plus" size={28} color={COLORS.textWhite} />
+    </View>
+  </TouchableOpacity>
+);
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarInactiveTintColor: '#94A3B8',
+        tabBarShowLabel: true,
+        tabBarStyle: {
+          backgroundColor: COLORS.surface,
+          borderTopColor: COLORS.borderLight,
+          borderTopWidth: 1,
+          height: Platform.OS === 'ios' ? 85 : 68,
+          paddingBottom: Platform.OS === 'ios' ? 25 : 8,
+          paddingTop: 6,
+          elevation: 8,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.05,
+          shadowRadius: 8,
+        },
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: '600',
+          marginTop: 2,
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Feather name="home" size={22} color={color} />,
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="chat"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Chat',
+          tabBarIcon: ({ color }) => <Feather name="message-square" size={22} color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="add"
+        options={{
+          title: '',
+          tabBarIcon: () => null,
+          tabBarButton: (props) => <CustomFabButton {...props} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="task"
+        options={{
+          title: 'Task',
+          tabBarIcon: ({ color }) => <Feather name="calendar" size={22} color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <Feather name="user" size={22} color={color} />,
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  fabWrapper: {
+    top: -20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 60,
+  },
+  fabInner: {
+    width: 54,
+    height: 54,
+    borderRadius: 27,
+    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: COLORS.primary,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.35,
+    shadowRadius: 10,
+    elevation: 8,
+  },
+});
