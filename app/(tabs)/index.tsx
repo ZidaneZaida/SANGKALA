@@ -107,7 +107,7 @@ export default function DashboardScreen() {
         {/* 4. TODAY'S PLAN */}
         <View style={styles.sectionHeader}>
           <Text style={TYPOGRAPHY.h2}>Today's Plan</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/(tabs)/task')}>
             <Text style={styles.seeAllText}>See all</Text>
           </TouchableOpacity>
         </View>
@@ -131,7 +131,7 @@ export default function DashboardScreen() {
         {/* 5. YOUR STREAKS */}
         <View style={[styles.sectionHeader, { marginTop: SPACING.lg }]}>
           <Text style={TYPOGRAPHY.h2}>Your Streaks</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/(tabs)/profile')}>
             <Text style={styles.seeAllText}>View all</Text>
           </TouchableOpacity>
         </View>
