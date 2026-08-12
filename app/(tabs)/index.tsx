@@ -43,7 +43,7 @@ export default function DashboardScreen() {
             <View style={styles.mascotMini}>
               <Text style={{ fontSize: 24 }}>🤖</Text>
             </View>
-            <TouchableOpacity style={styles.notificationBtn} onPress={() => router.replace('/notification')}>
+            <TouchableOpacity style={styles.notificationBtn} onPress={() => router.replace('../notification')}>
               <Feather name="bell" size={20} color={COLORS.textPrimary} />
               <View style={styles.notificationBadge} />
             </TouchableOpacity>
