@@ -41,6 +41,7 @@ export default function ChatbotScreen() {
         <ScrollView
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
+          style={styles.chatScroll}
         >
           {/* Welcome Background Blob (Simulasi Gradient Soft) */}
           <View style={styles.topBackground} />
@@ -170,6 +171,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg,
     paddingBottom: SPACING.xl,
     flexGrow: 1,
+  },
+  chatScroll: {
+    flex: 1,
   },
   topBackground: {
     position: 'absolute',
