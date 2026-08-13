@@ -7,11 +7,11 @@ import {
     SafeAreaView,
     StatusBar,
     Dimensions,
-    Image,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { Colors, Typography, BorderRadius, Shadows } from '@/constants/theme';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Colors, BorderRadius, Shadows } from '@/constants/theme';
+import Mascot from '@/components/Mascot';
 
 const { width } = Dimensions.get('window');
 
@@ -42,11 +42,7 @@ export default function LandingPage() {
 
                         {/* Mascot Icon Container */}
                         <View style={styles.mascotCard}>
-                            <MaterialCommunityIcons
-                                name="robot-happy-outline"
-                                size={88}
-                                color={Colors.primary}
-                            />
+                            <Mascot size={88} variant={1} />
                             <View style={styles.badgeD}>
                                 <Text style={styles.badgeDText}>D</Text>
                             </View>

@@ -11,6 +11,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING, SHADOWS } from '../../constants/theme';
+import Mascot from '../../components/Mascot';
 
 export default function DashboardScreen() {
 
@@ -40,9 +41,9 @@ export default function DashboardScreen() {
             <Text style={TYPOGRAPHY.bodyRegular}>Let's make today productive!</Text>
           </View>
           <View style={styles.headerActions}>
-            <View style={styles.mascotMini}>
-              <Text style={{ fontSize: 24 }}>🤖</Text>
-            </View>
+          <View style={styles.mascotMini}>
+            <Mascot size={28} variant={4} />
+          </View>
             <TouchableOpacity style={styles.notificationBtn} onPress={() => router.replace('../notification')}>
               <Feather name="bell" size={20} color={COLORS.textPrimary} />
               <View style={styles.notificationBadge} />
@@ -154,7 +155,7 @@ export default function DashboardScreen() {
         {/* 6. AI INSIGHT CARD */}
         <View style={styles.aiInsightCard}>
           <View style={styles.aiInsightIconWrapper}>
-            <Text style={{ fontSize: 24 }}>🤖</Text>
+            <Mascot size={24} variant={5} />
           </View>
           <View style={styles.aiInsightTextContainer}>
             <Text style={styles.aiInsightTitle}>AI Insight</Text>
