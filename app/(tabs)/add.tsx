@@ -21,8 +21,8 @@ export default function AddTaskScreen() {
 
   // State Utama Form
   const [title, setTitle] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Study');
-  const [selectedImpact, setSelectedImpact] = useState('Medium');
+  const [selectedCategory, setSelectedCategory] = useState('Belajar');
+  const [selectedImpact, setSelectedImpact] = useState('Sedang');
   const [syncCalendar, setSyncCalendar] = useState(true);
 
   // State Date & Time
