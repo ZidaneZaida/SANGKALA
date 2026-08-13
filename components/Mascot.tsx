@@ -2,14 +2,14 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 
 const VARIANTS = [
-  require('../assets/images/mascot/mascot_00.png'),
-  require('../assets/images/mascot/mascot_01.png'),
-  require('../assets/images/mascot/mascot_02.png'),
-  require('../assets/images/mascot/mascot_03.png'),
-  require('../assets/images/mascot/mascot_04.png'),
-  require('../assets/images/mascot/mascot_05.png'),
-  require('../assets/images/mascot/mascot_06.png'),
-  require('../assets/images/mascot/mascot_07.png'),
+  require('../assets/images/mascot/mascot_00.webp'),
+  require('../assets/images/mascot/mascot_01.webp'),
+  require('../assets/images/mascot/mascot_02.webp'),
+  require('../assets/images/mascot/mascot_03.webp'),
+  require('../assets/images/mascot/mascot_04.webp'),
+  require('../assets/images/mascot/mascot_05.webp'),
+  require('../assets/images/mascot/mascot_06.webp'),
+  require('../assets/images/mascot/mascot_07.webp'),
 ];
 
 type MascotProps = {
