@@ -64,7 +64,7 @@ export default function LandingPage() {
                 {/* Text Section */}
                 <View style={styles.textSection}>
                     <Text style={styles.headline}>
-                        Manage Your Time With Smart and Free From{' '}
+                        Kelola Waktu Anda Dengan Pintar dan Bebas dari{' '}
                         <Text style={styles.highlightText}>Burnout</Text>
                     </Text>
                 </View>
@@ -76,7 +76,7 @@ export default function LandingPage() {
                         onPress={handleStart}
                         activeOpacity={0.85}
                     >
-                        <Text style={styles.startButtonText}>Let's Started</Text>
+                        <Text style={styles.startButtonText}>Mari Mulai</Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -48,7 +48,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Beranda',
           tabBarIcon: ({ color }) => <Feather name="home" size={22} color={color} />,
         }}
       />
@@ -56,7 +56,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="chat"
         options={{
-          title: 'Chat',
+          title: 'Obrolan',
           tabBarIcon: ({ color }) => <Feather name="message-square" size={22} color={color} />,
         }}
       />
@@ -73,7 +73,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="task"
         options={{
-          title: 'Task',
+          title: 'Tugas',
           tabBarIcon: ({ color }) => <Feather name="calendar" size={22} color={color} />,
         }}
       />
@@ -81,7 +81,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
+          title: 'Profil',
           tabBarIcon: ({ color }) => <Feather name="user" size={22} color={color} />,
         }}
       />

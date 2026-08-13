@@ -36,10 +36,10 @@ export default function LoginScreen() {
                 {/* HEADER SECTION */}
                 <View style={styles.headerContainer}>
                     <View style={styles.headerTextContainer}>
-                        <Text style={TYPOGRAPHY.h1}>Welcome Back !</Text>
+                        <Text style={TYPOGRAPHY.h1}>Selamat Datang Kembali !</Text>
                         <Text style={[TYPOGRAPHY.bodyRegular, styles.subtitle]}>
-                            Keep managing your daily tasks{'\n'}
-                            with AI without the <Text style={styles.highlightText}>worry</Text> or <Text style={styles.highlightText}>fatigue</Text>
+                            Terus kelola tugas harian Anda dengan AI tanpa khawatir atau kelelahan{'\n'}
+                            dengan <Text style={styles.highlightText}>tenang</Text> atau <Text style={styles.highlightText}>lelah</Text>
                         </Text>
                     </View>
 
@@ -55,11 +55,11 @@ export default function LoginScreen() {
                     {/* Email Input */}
                     <View style={styles.inputContainer}>
                         <Feather name="mail" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email address"
-                            placeholderTextColor={COLORS.textSecondary}
-                            keyboardType="email-address"
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Alamat Email"
+                                placeholderTextColor={COLORS.textSecondary}
+                                keyboardType="email-address"
                             autoCapitalize="none"
                             value={email}
                             onChangeText={setEmail}
@@ -69,11 +69,11 @@ export default function LoginScreen() {
                     {/* Password Input */}
                     <View style={styles.inputContainer}>
                         <Feather name="lock" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor={COLORS.textSecondary}
-                            secureTextEntry={!showPassword}
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Kata Sandi"
+                                placeholderTextColor={COLORS.textSecondary}
+                                secureTextEntry={!showPassword}
                             value={password}
                             onChangeText={setPassword}
                         />
@@ -88,9 +88,9 @@ export default function LoginScreen() {
 
                     {/* Forgot Password Link */}
                     <View style={styles.forgotPasswordContainer}>
-                        <TouchableOpacity>
-                            <Text style={styles.forgotPasswordText}>Lupa Password ?</Text>
-                        </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.forgotPasswordText}>Lupa Kata Sandi ?</Text>
+                    </TouchableOpacity>
                     </View>
 
                     {/* Login Button */}
@@ -101,14 +101,14 @@ export default function LoginScreen() {
                             router.replace('/(tabs)');
                         }}
                     >
-                        <Text style={styles.primaryButtonText}>Login</Text>
+                        <Text style={styles.primaryButtonText}>Masuk</Text>
                     </TouchableOpacity>
                 </View>
 
                 {/* DIVIDER */}
                 <View style={styles.dividerContainer}>
                     <View style={styles.dividerLine} />
-                    <Text style={[TYPOGRAPHY.caption, styles.dividerText]}>or continue with</Text>
+                    <Text style={[TYPOGRAPHY.caption, styles.dividerText]}>atau lanjutkan dengan</Text>
                     <View style={styles.dividerLine} />
                 </View>
 
@@ -127,9 +127,9 @@ export default function LoginScreen() {
 
                 {/* FOOTER */}
                 <View style={styles.footerContainer}>
-                    <Text style={TYPOGRAPHY.bodyRegular}>Dont have account ? </Text>
+                    <Text style={TYPOGRAPHY.bodyRegular}>Belum punya akun ? </Text>
                     <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
-                        <Text style={styles.linkTextFooter}>Register</Text>
+                        <Text style={styles.linkTextFooter}>Daftar</Text>
                     </TouchableOpacity>
                 </View>
 

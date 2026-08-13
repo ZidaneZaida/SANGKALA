@@ -15,7 +15,7 @@ import Mascot from '../components/Mascot';
 
 export default function NotificationScreen() {
     const router = useRouter();
-    const [activeTab, setActiveTab] = useState<'All' | 'AI Insights'>('All');
+    const [activeTab, setActiveTab] = useState<'Semua' | 'Wawasan AI'>('Semua');
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -27,7 +27,7 @@ export default function NotificationScreen() {
                     <TouchableOpacity onPress={() => router.replace('/(tabs)')} style={styles.backButton}>
                         <Feather name="arrow-left" size={24} color={COLORS.textPrimary} />
                     </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Notifications</Text>
+                    <Text style={styles.headerTitle}>Notifikasi</Text>
                 </View>
                 <TouchableOpacity style={styles.filterButton}>
                     <Feather name="filter" size={18} color={COLORS.textPrimary} />
@@ -36,20 +36,20 @@ export default function NotificationScreen() {
 
             {/* SEGMENTED TABS */}
             <View style={styles.tabContainer}>
-                <TouchableOpacity
-                    style={[styles.tab, activeTab === 'All' && styles.activeTab]}
-                    onPress={() => setActiveTab('All')}
-                >
-                    <Text style={[styles.tabText, activeTab === 'All' && styles.activeTabText]}>
-                        All
+                    <TouchableOpacity
+                        style={[styles.tab, activeTab === 'Semua' && styles.activeTab]}
+                        onPress={() => setActiveTab('Semua')}
+                    >
+                    <Text style={[styles.tabText, activeTab === 'Semua' && styles.activeTabText]}>
+                        Semua
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.tab, activeTab === 'AI Insights' && styles.activeTab]}
-                    onPress={() => setActiveTab('AI Insights')}
-                >
-                    <Text style={[styles.tabText, activeTab === 'AI Insights' && styles.activeTabText]}>
-                        AI Insights
+                    <TouchableOpacity
+                        style={[styles.tab, activeTab === 'Wawasan AI' && styles.activeTab]}
+                        onPress={() => setActiveTab('Wawasan AI')}
+                    >
+                    <Text style={[styles.tabText, activeTab === 'Wawasan AI' && styles.activeTabText]}>
+                        Wawasan AI
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -59,8 +59,8 @@ export default function NotificationScreen() {
                 showsVerticalScrollIndicator={false}
             >
 
-                {/* CARD 1: STRESS SPIKE (Hanya tampil di tab 'All') */}
-                {activeTab === 'All' && (
+                {/* CARD 1: STRESS SPIKE (Hanya tampil di tab 'Semua') */}
+                {activeTab === 'Semua' && (
                     <TouchableOpacity style={[styles.card, styles.alertCard]} activeOpacity={0.9}>
                         <View style={styles.alertBlob} />
                         <View style={styles.cardHeader}>
@@ -68,25 +68,25 @@ export default function NotificationScreen() {
                                 <Feather name="heart" size={20} color={COLORS.statusRed} />
                             </View>
                             <View style={styles.cardTitleContent}>
-                                <Text style={styles.cardTitle}>Stress Spike Detected</Text>
-                                <Text style={styles.cardTime}>Just now</Text>
+                                <Text style={styles.cardTitle}>Gangguan Stres Terdeteksi</Text>
+                                <Text style={styles.cardTime}>Baru saja</Text>
                             </View>
                             <TouchableOpacity>
                                 <Feather name="more-horizontal" size={20} color={COLORS.textSecondary} />
                             </TouchableOpacity>
                         </View>
-                        <Text style={styles.cardBody}>
-                            Try a 2-min breathing exercise to recenter yourself.
-                        </Text>
-                        <TouchableOpacity style={styles.actionButton}>
-                            <Feather name="wind" size={14} color={COLORS.statusRed} style={{ marginRight: 6 }} />
-                            <Text style={styles.actionButtonText}>Start Exercise</Text>
+                            <Text style={styles.cardBody}>
+                                Coba latihan pernapasan 2 menit untuk menenangkan diri.
+                            </Text>
+                            <TouchableOpacity style={styles.actionButton}>
+                                <Feather name="wind" size={14} color={COLORS.statusRed} style={{ marginRight: 6 }} />
+                                <Text style={styles.actionButtonText}>Mulai Latihan</Text>
                         </TouchableOpacity>
                     </TouchableOpacity>
                 )}
 
-                {/* CARD 2: AI INSIGHT (Tampil di tab 'All' DAN 'AI Insights') */}
-                {(activeTab === 'All' || activeTab === 'AI Insights') && (
+                {/* CARD 2: AI INSIGHT (Tampil di tab 'Semua' DAN 'Wawasan AI') */}
+                {(activeTab === 'Semua' || activeTab === 'Wawasan AI') && (
                     <TouchableOpacity style={styles.card} activeOpacity={0.9}>
                         <View style={styles.cardHeader}>
                             <View style={[styles.iconWrapper, { backgroundColor: '#EEECFF' }]}>
@@ -94,19 +94,19 @@ export default function NotificationScreen() {
                                 <View style={styles.unreadDot} />
                             </View>
                             <View style={styles.cardTitleContent}>
-                                <Text style={styles.cardTitle}>Time for a screen break</Text>
-                                <Text style={styles.cardTime}>10m ago</Text>
+                                <Text style={styles.cardTitle}>Waktunya istirahat dari layar</Text>
+                                <Text style={styles.cardTime}>10m yang lalu</Text>
                             </View>
                         </View>
-                        <Text style={styles.cardBody}>
-                            <Text style={{ fontWeight: '600', color: COLORS.textPrimary }}>AI Insight: </Text>
-                            You've been focusing for 90 minutes. A quick stretch will...
-                        </Text>
+                            <Text style={styles.cardBody}>
+                                <Text style={{ fontWeight: '600', color: COLORS.textPrimary }}>Wawasan AI: </Text>
+                                Anda sudah fokus selama 90 menit. Coba streching sebentar...
+                            </Text>
                     </TouchableOpacity>
                 )}
 
-                {/* CARD 3 & 4 (Hanya tampil di tab 'All') */}
-                {activeTab === 'All' && (
+                {/* CARD 3 & 4 (Hanya tampil di tab 'Semua') */}
+                {activeTab === 'Semua' && (
                     <>
                         {/* ROUTINE REMINDER */}
                         <TouchableOpacity style={styles.card} activeOpacity={0.9}>
@@ -115,12 +115,12 @@ export default function NotificationScreen() {
                                     <Feather name="droplet" size={20} color="#0EA5E9" />
                                 </View>
                                 <View style={styles.cardTitleContent}>
-                                    <Text style={styles.cardTitle}>Drink water reminder</Text>
-                                    <Text style={styles.cardTime}>2h ago</Text>
+                                    <Text style={styles.cardTitle}>Pengingat minum air</Text>
+                                    <Text style={styles.cardTime}>2j yang lalu</Text>
                                 </View>
                             </View>
                             <Text style={styles.cardBody}>
-                                Stay hydrated to keep your energy levels steady throughout your study...
+                                Tetap terhidrasi untuk menjaga energi tetap stabil selama belajar...
                             </Text>
                         </TouchableOpacity>
 
@@ -131,12 +131,12 @@ export default function NotificationScreen() {
                                     <Feather name="bar-chart-2" size={20} color="#9333EA" />
                                 </View>
                                 <View style={styles.cardTitleContent}>
-                                    <Text style={styles.cardTitle}>Weekly Wellness Report</Text>
-                                    <Text style={styles.cardTime}>Yesterday</Text>
+                                    <Text style={styles.cardTitle}>Laporan Kesejahteraan Mingguan</Text>
+                                    <Text style={styles.cardTime}>Kemarin</Text>
                                 </View>
                             </View>
                             <Text style={styles.cardBody}>
-                                Your sleep score improved by 15% this week. Tap to view your full...
+                                Skor tidur Anda meningkat 15% minggu ini. Ketuk untuk melihat laporan lengkap...
                             </Text>
                         </TouchableOpacity>
                     </>

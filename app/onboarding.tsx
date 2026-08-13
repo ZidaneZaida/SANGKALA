@@ -27,13 +27,13 @@ const ONBOARDING_QUESTIONS = [
     },
     {
         id: 2,
-        subtitle: 'Lets Know Yourself Better !',
-        title: 'How do you feel about your current workload?',
+        subtitle: 'Mari Kenali Diri Anda Lebih Baik !',
+        title: 'Bagaimana perasaan Anda tentang beban kerja saat ini?',
         options: [
-            { label: 'Neatly Arranged', color: COLORS.statusGreen, value: 'low' },
-            { label: 'The Burden Begins to Pile Up', color: COLORS.statusYellow, value: 'medium' },
-            { label: 'A bit overwhelmed', color: COLORS.statusOrange, value: 'high' },
-            { label: 'Severe Burnout / Excessive Exhaustion', color: COLORS.statusRed, value: 'severe' },
+            { label: 'Teratur dengan Baik', color: COLORS.statusGreen, value: 'low' },
+            { label: 'Beban Mulai Menumpuk', color: COLORS.statusYellow, value: 'medium' },
+            { label: 'Cukup Kewalahan', color: COLORS.statusOrange, value: 'high' },
+            { label: 'Burnout Berat / Kelelahan Berlebihan', color: COLORS.statusRed, value: 'severe' },
         ],
     },
     {
@@ -116,7 +116,7 @@ export default function OnboardingScreen() {
                         </View>
                     </View>
                     <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
-                        <Text style={styles.skipText}>Skip</Text>
+                        <Text style={styles.skipText}>Lewati</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -164,7 +164,7 @@ export default function OnboardingScreen() {
                     {selectedOption ? (
                         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
                             <Text style={styles.nextButtonText}>
-                                {currentStep === ONBOARDING_QUESTIONS.length - 1 ? 'Finish' : 'Next'}
+                                {currentStep === ONBOARDING_QUESTIONS.length - 1 ? 'Selesai' : 'Selanjutnya'}
                             </Text>
                         </TouchableOpacity>
                     ) : (

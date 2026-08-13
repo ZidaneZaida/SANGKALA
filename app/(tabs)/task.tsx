@@ -15,13 +15,13 @@ export default function TaskScreen() {
   // Mock data untuk tanggal (Minggu ini)
   const [selectedDate, setSelectedDate] = useState(11);
   const calendarDates = [
-    { day: 'Sun', date: 9 },
-    { day: 'Mon', date: 10 },
-    { day: 'Tue', date: 11 }, // Hari ini
-    { day: 'Wed', date: 12 },
-    { day: 'Thu', date: 13 },
-    { day: 'Fri', date: 14 },
-    { day: 'Sat', date: 15 },
+    { day: 'Min', date: 9 },
+    { day: 'Sen', date: 10 },
+    { day: 'Sel', date: 11 },
+    { day: 'Rab', date: 12 },
+    { day: 'Kam', date: 13 },
+    { day: 'Jum', date: 14 },
+    { day: 'Sab', date: 15 },
   ];
 
   // Mock data jadwal harian menggunakan Timeline View
@@ -30,8 +30,8 @@ export default function TaskScreen() {
       id: 1,
       time: '09:00',
       period: 'AM',
-      title: 'Machine Learning: Supervised Models',
-      type: 'Study',
+      title: 'Machine Learning: Model Terbimbing',
+      type: 'Belajar',
       color: COLORS.primary,
       isCompleted: true,
     },
@@ -39,7 +39,7 @@ export default function TaskScreen() {
       id: 2,
       time: '11:30',
       period: 'AM',
-      title: 'Mindful Break & Black Coffee',
+      title: 'Istirahat Sadar & Kopi Hitam',
       type: 'Wellness',
       color: COLORS.statusGreen,
       isCompleted: true,
@@ -48,8 +48,8 @@ export default function TaskScreen() {
       id: 3,
       time: '01:00',
       period: 'PM',
-      title: 'Digital Signal Processing Report',
-      type: 'Assignment',
+      title: 'Laporan Pemrosesan Sinyal Digital',
+      type: 'Tugas',
       color: COLORS.statusOrange,
       isCompleted: false,
     },
@@ -57,8 +57,8 @@ export default function TaskScreen() {
       id: 4,
       time: '03:30',
       period: 'PM',
-      title: 'Motorcycle Maintenance (Honda Revo)',
-      type: 'Errand',
+      title: 'Perawatan Motor (Honda Revo)',
+      type: 'Urusan',
       color: COLORS.textSecondary,
       isCompleted: false,
     },
@@ -66,8 +66,8 @@ export default function TaskScreen() {
       id: 5,
       time: '04:30',
       period: 'PM',
-      title: 'Commute (100km PP)',
-      type: 'Travel',
+      title: 'Perjalanan (100km PP)',
+      type: 'Perjalanan',
       color: COLORS.statusYellow,
       isCompleted: false,
     },
@@ -79,8 +79,8 @@ export default function TaskScreen() {
       {/* 1. HEADER */}
       <View style={styles.header}>
         <View>
-          <Text style={TYPOGRAPHY.h1}>My Schedule</Text>
-          <Text style={TYPOGRAPHY.bodyRegular}>August 2026</Text>
+          <Text style={TYPOGRAPHY.h1}>Jadwal Saya</Text>
+          <Text style={TYPOGRAPHY.bodyRegular}>Agustus 2026</Text>
         </View>
         <View style={styles.headerActions}>
           <TouchableOpacity style={styles.iconButton}>
@@ -129,8 +129,8 @@ export default function TaskScreen() {
 
         {/* 3. TIMELINE VIEW SECTION */}
         <View style={styles.timelineHeader}>
-          <Text style={TYPOGRAPHY.h2}>Today's Agenda</Text>
-          <Text style={[TYPOGRAPHY.bodyMedium, { color: COLORS.primary }]}>5 Tasks</Text>
+          <Text style={TYPOGRAPHY.h2}>Agenda Hari Ini</Text>
+          <Text style={[TYPOGRAPHY.bodyMedium, { color: COLORS.primary }]}>5 Tugas</Text>
         </View>
 
         <View style={styles.timelineContainer}>
@@ -184,7 +184,7 @@ export default function TaskScreen() {
                     <View style={styles.taskFooter}>
                       <TouchableOpacity style={styles.actionIcon}>
                         <Feather name="clock" size={14} color={COLORS.textSecondary} />
-                        <Text style={styles.actionText}>Remind</Text>
+                        <Text style={styles.actionText}>Ingatkan</Text>
                       </TouchableOpacity>
                     </View>
                   </TouchableOpacity>
