@@ -67,7 +67,7 @@ export default function ProfileScreen() {
 
       {/* 1. HEADER */}
       <View style={styles.header}>
-        <Text style={TYPOGRAPHY.h1}>Profile</Text>
+        <Text style={TYPOGRAPHY.h1}>Profil</Text>
         <TouchableOpacity style={styles.editButton}>
           <Feather name="edit-2" size={18} color={COLORS.textPrimary} />
         </TouchableOpacity>
@@ -103,48 +103,48 @@ export default function ProfileScreen() {
         <View style={styles.statsContainer}>
           <View style={styles.statBox}>
             <Text style={styles.statNumber}>82</Text>
-            <Text style={styles.statLabel}>Avg Score</Text>
+            <Text style={styles.statLabel}>Rata-rata Skor</Text>
           </View>
           <View style={styles.statDivider} />
           <View style={styles.statBox}>
             <Text style={styles.statNumber}>12</Text>
-            <Text style={styles.statLabel}>Day Streak</Text>
+            <Text style={styles.statLabel}>Rentetan Hari</Text>
           </View>
           <View style={styles.statDivider} />
           <View style={styles.statBox}>
             <Text style={styles.statNumber}>145</Text>
-            <Text style={styles.statLabel}>Tasks Done</Text>
+            <Text style={styles.statLabel}>Tugas Selesai</Text>
           </View>
         </View>
 
         {/* 4. SETTINGS SECTION: Account & Integrations */}
-        <Text style={styles.sectionTitle}>Account & Integrations</Text>
+        <Text style={styles.sectionTitle}>Akun & Integrasi</Text>
         <View style={styles.settingsGroup}>
           <SettingItem
             icon="user"
-            title="Personal Information"
-            subtitle="Name, Email, Phone"
+            title="Informasi Pribadi"
+            subtitle="Nama, Email, Telepon"
           />
           <View style={styles.divider} />
           <SettingItem
             icon="calendar"
-            title="Linked Calendars"
+            title="Kalender Terhubung"
             value="Google"
           />
           <View style={styles.divider} />
           <SettingItem
             icon="activity"
-            title="Burnout Assessment Baseline"
-            subtitle="Retake the MBI onboarding test"
+            title="Baseline Asesmen Burnout"
+            subtitle="Ulangi tes onboarding MBI"
           />
         </View>
 
         {/* 5. SETTINGS SECTION: Preferences */}
-        <Text style={styles.sectionTitle}>Preferences</Text>
+        <Text style={styles.sectionTitle}>Preferensi</Text>
         <View style={styles.settingsGroup}>
           <SettingItem
             icon="bell"
-            title="Push Notifications"
+            title="Notifikasi Push"
             hasSwitch={true}
             switchValue={isNotificationsEnabled}
             onToggle={() => setIsNotificationsEnabled(!isNotificationsEnabled)}
@@ -152,7 +152,7 @@ export default function ProfileScreen() {
           <View style={styles.divider} />
           <SettingItem
             icon="moon"
-            title="Dark Mode"
+            title="Mode Gelap"
             hasSwitch={true}
             switchValue={isDarkMode}
             onToggle={() => setIsDarkMode(!isDarkMode)}
@@ -160,17 +160,17 @@ export default function ProfileScreen() {
         </View>
 
         {/* 6. SETTINGS SECTION: Support & Logout */}
-        <Text style={styles.sectionTitle}>Support</Text>
+        <Text style={styles.sectionTitle}>Dukungan</Text>
         <View style={styles.settingsGroup}>
-          <SettingItem icon="help-circle" title="Help Center & FAQ" />
+          <SettingItem icon="help-circle" title="Pusat Bantuan & FAQ" />
           <View style={styles.divider} />
-          <SettingItem icon="shield" title="Privacy Policy" />
+          <SettingItem icon="shield" title="Kebijakan Privasi" />
         </View>
 
         {/* LOGOUT BUTTON */}
         <TouchableOpacity style={styles.logoutButton}>
           <Feather name="log-out" size={20} color={COLORS.statusRed} style={{ marginRight: SPACING.sm }} />
-          <Text style={styles.logoutText}>Log Out</Text>
+          <Text style={styles.logoutText}>Keluar</Text>
         </TouchableOpacity>
 
         {/* App Version */}

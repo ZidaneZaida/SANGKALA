@@ -31,7 +31,7 @@ export default function ChatbotScreen() {
           <TouchableOpacity onPress={() => router.back()} style={styles.headerIcon}>
             <Feather name="arrow-left" size={24} color={COLORS.textPrimary} />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>AI Assistant</Text>
+          <Text style={styles.headerTitle}>Asisten AI</Text>
           <TouchableOpacity style={styles.headerIcon}>
             <Feather name="more-horizontal" size={24} color={COLORS.textPrimary} />
           </TouchableOpacity>
@@ -41,6 +41,7 @@ export default function ChatbotScreen() {
         <ScrollView
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
+          style={styles.chatScroll}
         >
           {/* Welcome Background Blob (Simulasi Gradient Soft) */}
           <View style={styles.topBackground} />
@@ -54,12 +55,12 @@ export default function ChatbotScreen() {
           </View>
 
             <Text style={styles.introTitle}>
-              How can I support{'\n'}your wellness today?
+              Bagaimana saya bisa mendukung{'\n'}kesejahteraan Anda hari ini?
             </Text>
 
             <View style={styles.introPill}>
               <Text style={styles.introPillText}>
-                I'm here to help you become your best self ✨
+                Saya di sini untuk membantu Anda menjadi versi terbaik dari diri sendiri ✨
               </Text>
             </View>
           </View>
@@ -87,25 +88,25 @@ export default function ChatbotScreen() {
 
           {/* Suggestions Section */}
           <View style={styles.suggestionsContainer}>
-            <Text style={styles.suggestionsTitle}>Suggested for you</Text>
+            <Text style={styles.suggestionsTitle}>Disarankan untuk Anda</Text>
 
             <View style={styles.chipsWrapper}>
               {/* Chip 1 */}
               <TouchableOpacity style={styles.chip}>
                 <Feather name="book-open" size={14} color={COLORS.primary} style={styles.chipIcon} />
-                <Text style={styles.chipText}>Study Tips</Text>
+                <Text style={styles.chipText}>Tips Belajar</Text>
               </TouchableOpacity>
 
               {/* Chip 2 */}
               <TouchableOpacity style={styles.chip}>
                 <Feather name="wind" size={14} color={COLORS.primary} style={styles.chipIcon} />
-                <Text style={styles.chipText}>Breathing Exercise</Text>
+                <Text style={styles.chipText}>Latihan Pernapasan</Text>
               </TouchableOpacity>
 
               {/* Chip 3 */}
               <TouchableOpacity style={styles.chip}>
                 <Feather name="edit-2" size={14} color={COLORS.textSecondary} style={styles.chipIcon} />
-                <Text style={[styles.chipText, { color: COLORS.textSecondary }]}>Journal Prompt</Text>
+                <Text style={[styles.chipText, { color: COLORS.textSecondary }]}>Prompt Jurnal</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -117,7 +118,7 @@ export default function ChatbotScreen() {
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.textInput}
-              placeholder="Ask me anything..."
+              placeholder="Tanyakan apa saja..."
               placeholderTextColor={COLORS.textSecondary}
               value={inputText}
               onChangeText={setInputText}
@@ -170,6 +171,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.lg,
     paddingBottom: SPACING.xl,
     flexGrow: 1,
+  },
+  chatScroll: {
+    flex: 1,
   },
   topBackground: {
     position: 'absolute',

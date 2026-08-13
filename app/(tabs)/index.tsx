@@ -18,13 +18,13 @@ export default function DashboardScreen() {
   const router = useRouter();
   // Data Mockup untuk Kalender Mingguan
   const weekDates = [
-    { day: 'Mon', date: '9', isActive: false },
-    { day: 'Tue', date: '10', isActive: false },
-    { day: 'Wed', date: '11', isActive: true }, // Asumsi hari ini
-    { day: 'Thu', date: '12', isActive: false },
-    { day: 'Fri', date: '13', isActive: false },
-    { day: 'Sat', date: '14', isActive: false },
-    { day: 'Sun', date: '15', isActive: false },
+    { day: 'Sen', date: '9', isActive: false },
+    { day: 'Sel', date: '10', isActive: false },
+    { day: 'Rab', date: '11', isActive: true },
+    { day: 'Kam', date: '12', isActive: false },
+    { day: 'Jum', date: '13', isActive: false },
+    { day: 'Sab', date: '14', isActive: false },
+    { day: 'Min', date: '15', isActive: false },
   ];
 
   return (
@@ -37,8 +37,8 @@ export default function DashboardScreen() {
         {/* 1. HEADER SECTION */}
         <View style={styles.header}>
           <View style={styles.headerTextContainer}>
-            <Text style={TYPOGRAPHY.h1}>Hi, Profesional! 👋</Text>
-            <Text style={TYPOGRAPHY.bodyRegular}>Let's make today productive!</Text>
+            <Text style={TYPOGRAPHY.h1}>Hai, Profesional! 👋</Text>
+            <Text style={TYPOGRAPHY.bodyRegular}>Mari buat hari ini produktif!</Text>
           </View>
           <View style={styles.headerActions}>
           <View style={styles.mascotMini}>
@@ -55,14 +55,14 @@ export default function DashboardScreen() {
         <View style={styles.wellnessCard}>
           <View style={styles.wellnessTop}>
             <View style={styles.wellnessTextContent}>
-              <Text style={styles.wellnessLabel}>Wellness Score</Text>
+              <Text style={styles.wellnessLabel}>Skor Kesejahteraan</Text>
               <View style={styles.scoreWrapper}>
                 <Text style={styles.scoreBig}>82</Text>
                 <Text style={styles.scoreSmall}> /100</Text>
               </View>
-              <Text style={styles.wellnessMessage}>You're doing great, keep going!</Text>
+              <Text style={styles.wellnessMessage}>Hebat, pertahankan!</Text>
               <TouchableOpacity style={styles.insightBtn}>
-                <Text style={styles.insightBtnText}>See insight</Text>
+                <Text style={styles.insightBtnText}>Lihat wawasan</Text>
                 <Feather name="arrow-right" size={14} color={COLORS.textWhite} />
               </TouchableOpacity>
             </View>
@@ -77,10 +77,10 @@ export default function DashboardScreen() {
             </View>
           </View>
           <View style={styles.metricsContainer}>
-            <View style={styles.metricItem}><Feather name="moon" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>85</Text><Text style={styles.metricLabel}>Rest</Text></View>
-            <View style={styles.metricItem}><Feather name="activity" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>78</Text><Text style={styles.metricLabel}>Focus</Text></View>
-            <View style={styles.metricItem}><Feather name="cpu" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>91</Text><Text style={styles.metricLabel}>Mind</Text></View>
-            <View style={styles.metricItem}><Feather name="coffee" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>68</Text><Text style={styles.metricLabel}>Energy</Text></View>
+            <View style={styles.metricItem}><Feather name="moon" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>85</Text><Text style={styles.metricLabel}>Istirahat</Text></View>
+            <View style={styles.metricItem}><Feather name="activity" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>78</Text><Text style={styles.metricLabel}>Fokus</Text></View>
+            <View style={styles.metricItem}><Feather name="cpu" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>91</Text><Text style={styles.metricLabel}>Pikiran</Text></View>
+            <View style={styles.metricItem}><Feather name="coffee" size={20} color={COLORS.textWhite} /><Text style={styles.metricValue}>68</Text><Text style={styles.metricLabel}>Energi</Text></View>
           </View>
         </View>
 
@@ -107,9 +107,9 @@ export default function DashboardScreen() {
 
         {/* 4. TODAY'S PLAN */}
         <View style={styles.sectionHeader}>
-          <Text style={TYPOGRAPHY.h2}>Today's Plan</Text>
+          <Text style={TYPOGRAPHY.h2}>Rencana Hari Ini</Text>
           <TouchableOpacity onPress={() => router.push('/(tabs)/task')}>
-            <Text style={styles.seeAllText}>See all</Text>
+            <Text style={styles.seeAllText}>Lihat semua</Text>
           </TouchableOpacity>
         </View>
 
@@ -131,24 +131,24 @@ export default function DashboardScreen() {
 
         {/* 5. YOUR STREAKS */}
         <View style={[styles.sectionHeader, { marginTop: SPACING.lg }]}>
-          <Text style={TYPOGRAPHY.h2}>Your Streaks</Text>
+          <Text style={TYPOGRAPHY.h2}>Rentetan Anda</Text>
           <TouchableOpacity onPress={() => router.push('/(tabs)/profile')}>
-            <Text style={styles.seeAllText}>View all</Text>
+            <Text style={styles.seeAllText}>Lihat semua</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.streaksContainer}>
           <View style={styles.streakCard}>
             <View style={[styles.streakIcon, { backgroundColor: '#FFF4ED' }]}><Feather name="zap" size={18} color={COLORS.statusOrange} /></View>
-            <Text style={styles.streakNumber}>12</Text><Text style={styles.streakLabel}>Focus{'\n'}days</Text>
+            <Text style={styles.streakNumber}>12</Text>            <Text style={styles.streakLabel}>Fokus{'\n'}hari</Text>
           </View>
           <View style={styles.streakCard}>
             <View style={[styles.streakIcon, { backgroundColor: '#EEECFF' }]}><Feather name="moon" size={18} color={COLORS.primary} /></View>
-            <Text style={styles.streakNumber}>8</Text><Text style={styles.streakLabel}>Sleep{'\n'}days</Text>
+            <Text style={styles.streakNumber}>8</Text>            <Text style={styles.streakLabel}>Tidur{'\n'}hari</Text>
           </View>
           <View style={styles.streakCard}>
             <View style={[styles.streakIcon, { backgroundColor: '#E0F2FE' }]}><Feather name="droplet" size={18} color="#0EA5E9" /></View>
-            <Text style={styles.streakNumber}>6</Text><Text style={styles.streakLabel}>Hydration{'\n'}days</Text>
+            <Text style={styles.streakNumber}>6</Text>            <Text style={styles.streakLabel}>Hidrasi{'\n'}hari</Text>
           </View>
         </View>
 
@@ -158,9 +158,9 @@ export default function DashboardScreen() {
             <Mascot size={24} variant={5} />
           </View>
           <View style={styles.aiInsightTextContainer}>
-            <Text style={styles.aiInsightTitle}>AI Insight</Text>
+            <Text style={styles.aiInsightTitle}>Wawasan AI</Text>
             <Text style={styles.aiInsightBody}>
-              Your rest quality improved 12% this week. Great job maintaining your boundaries!
+              Kualitas istirahat Anda meningkat 12% minggu ini. Bagus sekali mempertahankan batasan!
             </Text>
           </View>
           <Feather name="chevron-right" size={20} color={COLORS.textSecondary} />

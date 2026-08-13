@@ -41,10 +41,10 @@ export default function RegisterScreen() {
                 {/* HEADER SECTION */}
                 <View style={styles.headerContainer}>
                     <View style={styles.headerTextContainer}>
-                        <Text style={TYPOGRAPHY.h1}>Create{'\n'}Account !</Text>
+                        <Text style={TYPOGRAPHY.h1}>Buat{'\n'}Akun !</Text>
                         <Text style={[TYPOGRAPHY.bodyRegular, styles.subtitle]}>
-                            Start your journey toward healthier,{' '}
-                            <Text style={styles.highlightText}>burnout</Text> free productivity.
+                            Mulai perjalanan menuju produktivitas yang lebih sehat,{' '}
+                            <Text style={styles.highlightText}>bebas burnout</Text>.
                         </Text>
                     </View>
                     {/* Mascot ilustrasi 3D */}
@@ -62,7 +62,7 @@ export default function RegisterScreen() {
                             <Feather name="user" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
                             <TextInput
                                 style={styles.input}
-                                placeholder="First name"
+                                placeholder="Nama Depan"
                                 placeholderTextColor={COLORS.textSecondary}
                                 value={firstName}
                                 onChangeText={setFirstName}
@@ -72,7 +72,7 @@ export default function RegisterScreen() {
                             <Feather name="user" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
                             <TextInput
                                 style={styles.input}
-                                placeholder="Last name"
+                                placeholder="Nama Belakang"
                                 placeholderTextColor={COLORS.textSecondary}
                                 value={lastName}
                                 onChangeText={setLastName}
@@ -83,11 +83,11 @@ export default function RegisterScreen() {
                     {/* Email Input */}
                     <View style={styles.inputContainer}>
                         <Feather name="mail" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email address"
-                            placeholderTextColor={COLORS.textSecondary}
-                            keyboardType="email-address"
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Alamat Email"
+                                placeholderTextColor={COLORS.textSecondary}
+                                keyboardType="email-address"
                             autoCapitalize="none"
                             value={email}
                             onChangeText={setEmail}
@@ -97,11 +97,11 @@ export default function RegisterScreen() {
                     {/* Password Input */}
                     <View style={styles.inputContainer}>
                         <Feather name="lock" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor={COLORS.textSecondary}
-                            secureTextEntry={!showPassword}
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Kata Sandi"
+                                placeholderTextColor={COLORS.textSecondary}
+                                secureTextEntry={!showPassword}
                             value={password}
                             onChangeText={setPassword}
                         />
@@ -117,11 +117,11 @@ export default function RegisterScreen() {
                     {/* Confirm Password Input */}
                     <View style={styles.inputContainer}>
                         <Feather name="lock" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password" // Sesuai wireframe
-                            placeholderTextColor={COLORS.textSecondary}
-                            secureTextEntry={!showConfirmPassword}
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Kata Sandi"
+                                placeholderTextColor={COLORS.textSecondary}
+                                secureTextEntry={!showConfirmPassword}
                             value={confirmPassword}
                             onChangeText={setConfirmPassword}
                         />
@@ -143,8 +143,8 @@ export default function RegisterScreen() {
                             {agreeTerms && <Feather name="check" size={14} color={COLORS.textWhite} />}
                         </TouchableOpacity>
                         <Text style={[TYPOGRAPHY.caption, { flex: 1 }]}>
-                            I agree to the <Text style={styles.linkText}>Terms of Service</Text> and{' '}
-                            <Text style={styles.linkText}>Privacy Policy</Text>
+                            Saya setuju dengan <Text style={styles.linkText}>Ketentuan Layanan</Text> dan{' '}
+                            <Text style={styles.linkText}>Kebijakan Privasi</Text>
                         </Text>
                     </View>
 
@@ -156,14 +156,14 @@ export default function RegisterScreen() {
                             router.replace('/login');
                         }}
                     >
-                        <Text style={styles.primaryButtonText}>Register</Text>
+                        <Text style={styles.primaryButtonText}>Daftar</Text>
                     </TouchableOpacity>
                 </View>
 
                 {/* DIVIDER */}
                 <View style={styles.dividerContainer}>
                     <View style={styles.dividerLine} />
-                    <Text style={[TYPOGRAPHY.caption, styles.dividerText]}>Or sign up with</Text>
+                    <Text style={[TYPOGRAPHY.caption, styles.dividerText]}>Atau daftar dengan</Text>
                     <View style={styles.dividerLine} />
                 </View>
 
@@ -182,9 +182,9 @@ export default function RegisterScreen() {
 
                 {/* FOOTER */}
                 <View style={styles.footerContainer}>
-                    <Text style={TYPOGRAPHY.bodyRegular}>Have account ? </Text>
+                    <Text style={TYPOGRAPHY.bodyRegular}>Sudah punya akun ? </Text>
                     <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
-                        <Text style={styles.linkTextFooter}>Login</Text>
+                        <Text style={styles.linkTextFooter}>Masuk</Text>
                     </TouchableOpacity>
                 </View>
 
