@@ -13,6 +13,7 @@ import {
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING, SHADOWS } from '../../constants/theme';
+import Mascot from '../../components/Mascot';
 
 export default function ChatbotScreen() {
   const router = useRouter();
@@ -46,11 +47,11 @@ export default function ChatbotScreen() {
 
           {/* Intro Section */}
           <View style={styles.introSection}>
-            <View style={styles.avatarLargeContainer}>
-              <View style={styles.avatarLarge}>
-                <Feather name="cpu" size={28} color={COLORS.primary} />
-              </View>
+          <View style={styles.avatarLargeContainer}>
+            <View style={styles.avatarLarge}>
+              <Mascot size={40} variant={6} />
             </View>
+          </View>
 
             <Text style={styles.introTitle}>
               How can I support{'\n'}your wellness today?
@@ -75,7 +76,7 @@ export default function ChatbotScreen() {
           {/* AI Typing Indicator Bubble */}
           <View style={styles.messageRowBot}>
             <View style={styles.avatarSmall}>
-              <Feather name="cpu" size={14} color={COLORS.textWhite} />
+              <Mascot size={14} variant={7} />
             </View>
             <View style={styles.bubbleBotTyping}>
               <View style={styles.typingDot} />
@@ -259,10 +260,11 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
     borderRadius: 14,
-    backgroundColor: '#A5B4FC', // Soft indigo
+    backgroundColor: '#A5B4FC',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: SPACING.sm,
+    overflow: 'hidden',
   },
   bubbleBotTyping: {
     backgroundColor: COLORS.surface,

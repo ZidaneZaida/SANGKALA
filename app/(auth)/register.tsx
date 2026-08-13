@@ -5,7 +5,6 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    Image,
     KeyboardAvoidingView,
     Platform,
     ScrollView,
@@ -13,6 +12,7 @@ import {
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING } from '../../constants/theme';
+import Mascot from '../../components/Mascot';
 
 export default function RegisterScreen() {
     const router = useRouter();
@@ -47,9 +47,9 @@ export default function RegisterScreen() {
                             <Text style={styles.highlightText}>burnout</Text> free productivity.
                         </Text>
                     </View>
-                    {/* Placeholder untuk ilustrasi 3D dari wireframe */}
+                    {/* Mascot ilustrasi 3D */}
                     <View style={styles.illustrationPlaceholder}>
-                        <Feather name="image" size={32} color={COLORS.primary} style={{ opacity: 0.5 }} />
+                        <Mascot size={80} variant={3} />
                     </View>
                 </View>
 

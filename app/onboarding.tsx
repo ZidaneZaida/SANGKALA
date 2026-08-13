@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING } from '../constants/theme';
+import Mascot from '../components/Mascot';
 
 // --- DATA PERTANYAAN ONBOARDING ---
 // Menggabungkan pertanyaan PRD dengan teks dari wireframe (Step 2)
@@ -173,7 +174,7 @@ export default function OnboardingScreen() {
 
                 {/* MOCKUP BACKGROUND / MASCOT (Absolute Positioning) */}
                 <View style={styles.mascotPlaceholder}>
-                    <Text style={styles.mascotText}>🤖 D</Text>
+                    <Mascot size={150} variant={1} />
                 </View>
 
             </View>
@@ -305,10 +306,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         opacity: 0.6,
-        zIndex: 1, // Berada di belakang konten
+        zIndex: 1,
     },
-    mascotText: {
-        fontSize: 40,
-        color: COLORS.primary,
-    }
 });

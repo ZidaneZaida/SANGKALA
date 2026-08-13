@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING, SHADOWS } from '../constants/theme';
+import Mascot from '../components/Mascot';
 
 export default function NotificationScreen() {
     const router = useRouter();
@@ -89,7 +90,7 @@ export default function NotificationScreen() {
                     <TouchableOpacity style={styles.card} activeOpacity={0.9}>
                         <View style={styles.cardHeader}>
                             <View style={[styles.iconWrapper, { backgroundColor: '#EEECFF' }]}>
-                                <Text style={{ fontSize: 18 }}>🤖</Text>
+                                <Mascot size={20} variant={3} />
                                 <View style={styles.unreadDot} />
                             </View>
                             <View style={styles.cardTitleContent}>

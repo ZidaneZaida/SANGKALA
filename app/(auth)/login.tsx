@@ -12,6 +12,7 @@ import {
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { COLORS, TYPOGRAPHY, BORDER_RADIUS, SPACING } from '../../constants/theme';
+import Mascot from '../../components/Mascot';
 
 export default function LoginScreen() {
     const router = useRouter();
@@ -42,9 +43,9 @@ export default function LoginScreen() {
                         </Text>
                     </View>
 
-                    {/* Placeholder untuk Maskot Robot 'D' dari file image_bbcd37.png */}
+                    {/* Mascot Robot 'D' */}
                     <View style={styles.illustrationPlaceholder}>
-                        <Text style={styles.mascotText}>D</Text>
+                        <Mascot size={100} variant={2} />
                     </View>
                 </View>
 
